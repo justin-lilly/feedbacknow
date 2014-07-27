@@ -1,47 +1,49 @@
 <head>
+	<link rel="stylesheet" type="text/css" href="application.css">
 	<style>
-	.idu1 {color:red;}
-	.idu2 {color:yellow;}
-	.idu3 {color:green;}
+	.idu1 {background-color:#F5406A; border-radius: 20px; text-align: center}
+	.idu2 {background-color:#F7F79C; border-radius: 20px; text-align: center}
+	.idu3 {background-color:#79F782; border-radius: 20px; text-align: center}
 	</style>
 </head>
 
 <body>
+	<div class="container">
+		<a href="/home">Home</a>
+		<h2> Lecture: <%= @lecture.name %> </h2> 
 
-	<h2> Lecture: <%= @lecture.name %> </h2> 
+		 Add your student's IDs separated by commas:
+	  <form action="/lecstu/new" method="post">
+	  	<input type="text" id="student_id" name="lecstu[student_id]"> 
+	  	<input type="hidden" id="lecture_id" value=<%=@lecture.id %> name="lecstu[lecture_id]">
+	    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"> 
+	  	<input class="button" type="submit" value="submit">
+		</form>
 
-	 Add your student's IDs separated by commas:
-  <form action="/lecstu/new" method="post">
-  	<input type="text" id="student_id" name="lecstu[student_id]"> 
-  	<input type="hidden" id="lecture_id" value=<%=@lecture.id %> name="lecstu[lecture_id]">
-    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"> 
-  	<input type="submit" value="submit">
-	</form>
+		Students: <% lecstus = Lecstu.where(:lecture_id => @lecture.id) %>
+		<% lecstus.each do |x| %>
+		<%= x.student_id%>
+		<% end %> <br>
 
-	Students: <% lecstus = Lecstu.where(:lecture_id => @lecture.id) %>
-	<% lecstus.each do |x| %>
-	<%= x.student_id%>
-	<% end %>
+	<br>
 
-<br>
+		<h3>Feedback from this lecture: </h3><br><br>
 
-	<h3>Feedback from this lecture: </h3><br><br>
+	 	<% @idus.reverse.each do |idu| %>
 
- 	<% @idus.reverse.each do |idu| %>
-
-	<div class="idu<%=idu.idu_type %>" > 
+		<div class="idu<%=idu.idu_type %>" > 
 
 
-		 Keyword: <%= idu.keyword  %> <br>
+			 Keyword: <%= idu.keyword  %> <br>
 
-		 <% time = idu.created_at.to_s[0..18] %> 
+			 <% time = idu.created_at.to_s[0..18] %> 
 
-		 Created at: <%= time  %> <br><br>
+			 Created at: <%= time  %> <br><br>
 
+		</div><br>
+
+		<% end %>
 	</div>
-
-	<% end %>
-
 </body>
 
 <script type="text/javascript"> 

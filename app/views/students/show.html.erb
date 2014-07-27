@@ -1,18 +1,27 @@
-<a href="/home">Home </a>
+<head>
+	<link rel="stylesheet" href="application.css">
+</head>
 
-<h3> Hi, <%= @student.username %>. These are your lectures: </h3> <br>
-<% @lecturearray.each do |x| %>
+<body>
 
+	<a href="/home">Home </a>
 
-<a href="/students/<%= @student.id %>/<%= Lecture.find(x).name %>"><%= Lecture.find(x).name %> </a><br>
-
-<% end %> <br>
-
-<h3>  These are your Feedbacks: </h3><br>
-<% @idus.each do |idu| %>
-Lecture: <%= Lecture.find(idu.lecture_id).name %> <br>
-Keyword: <%= idu.keyword  %> <br>
-Created at: <%= idu.created_at  %> <br><br>
-<% end %>
+	<div class="container">
+		<h3> Hi, <%= @student.username %>. These are your lectures: </h3> <br>
+		<% @lecturearray.each do |x| %>
 
 
+		<a href="/students/<%= @student.id %>/<%= Lecture.find(x).name %>"><%= Lecture.find(x).name %> </a><br>
+
+		<% end %> <br>
+
+		<h3>  These are your Feedbacks: </h3><br>
+		<% @idus.reverse.each do |idu| %>
+		Lecture: <%= Lecture.find(idu.lecture_id).name %> <br>
+		Keyword: <%= idu.keyword  %> <br>
+		Created at: <%= idu.created_at.to_s[0..18]  %> <br><br>
+		<% end %>
+	</div>
+
+
+</body>
