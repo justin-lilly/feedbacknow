@@ -1,12 +1,33 @@
+<div>
 
-<h2> Lecture: <%= @lecture.name %> </h2> 
+	<h2> Lecture: <%= @lecture.name %> </h2> 
 
-I don't understands from this lecture: <br><br>
+	I don't understands from this lecture: <br><br>
 
-<% @idus.each do |idu| %>
+	<% @idus.reverse.each do |idu| %>
 
-Keyword: <%= idu.keyword  %> <br>
+	<div id="#{time}" class="box">
 
-Created at: <%= idu.created_at  %> <br><br>
+		Keyword: <%= idu.keyword  %> <br>
 
-<% end %>
+		<% time = idu.created_at.to_s[0..18] %>
+
+		Created at: <%= time  %> <br><br>
+
+	</div>
+
+	<% end %>
+
+</div>
+
+<script type="text/javascript"> 
+
+  setInterval("my_function();",1000); 
+  
+    function my_function(){
+        window.location = location.href;
+    }
+
+
+</script>
+

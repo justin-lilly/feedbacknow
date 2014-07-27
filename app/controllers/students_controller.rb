@@ -25,7 +25,6 @@ class StudentsController < ApplicationController
   end
 
   def edit
-
   end
 
   def something
@@ -39,6 +38,13 @@ class StudentsController < ApplicationController
     @idutype = params[:type]
   end
 
+  def newidu
+    Idu.create(idu_params)
+    lecturename = Lecture.find(idu_params[:lecture_id]).name
+    studentid = idu_params[:student_id]
+    redirect_to "/students/#{studentid}/#{lecturename}"
+  end
+
 
 
 private
@@ -47,6 +53,10 @@ private
     params.require(:student).permit(:username) 
   end
 
+  def idu_params
+    params.require(:idu).permit(:lecture_id, :keyword, :student_id, :idu_type)
+  end
+
 end
 
-'/students/:id/:lecture'
+

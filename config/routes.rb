@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get '/students/:id/:lecture' => "students#something"
   get '/students/:id/:lecture/:type' => "students#theform"
+  post '/students/:id/:lecture' => "students#something"
+  post '/students/:id/:lecture/:type' => "students#newidu"
 
 
 end
