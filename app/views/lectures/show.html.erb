@@ -1,5 +1,12 @@
-<div>
+<head>
+	<style>
+	.idu1 {color:red;}
+	.idu2 {color:yellow;}
+	.idu3 {color:green;}
+	</style>
+</head>
 
+<body>
 
 	<h2> Lecture: <%= @lecture.name %> </h2> 
 
@@ -20,21 +27,22 @@
 
 	<h3>Feedback from this lecture: </h3><br><br>
 
-	<% @idus.reverse.each do |idu| %>
+ 	<% @idus.reverse.each do |idu| %>
 
-	<div id="#{time}" class="box">
+	<div class="idu<%=idu.idu_type %>" > 
 
-		Keyword: <%= idu.keyword  %> <br>
 
-		<% time = idu.created_at.to_s[0..18] %>
+		 Keyword: <%= idu.keyword  %> <br>
 
-		Created at: <%= time  %> <br><br>
+		 <% time = idu.created_at.to_s[0..18] %> 
+
+		 Created at: <%= time  %> <br><br>
 
 	</div>
 
 	<% end %>
 
-</div>
+</body>
 
 <script type="text/javascript"> 
 
@@ -46,4 +54,6 @@
 
 
 </script>
+
+
 

@@ -1,4 +1,7 @@
-Hi <%= @teacher.username %>, your lectures are: <br><br>
+
+<a href="/home">Home </a>
+
+<h3> Hi <%= @teacher.username %>, your lectures are: <br> </h3>
 
 <% @lectures.each do |lecture| %>
 
@@ -8,7 +11,7 @@ Hi <%= @teacher.username %>, your lectures are: <br><br>
 <% end %>
 
 <br><br>
-Add a new lecture: <br><br>
+<h3> Add a new lecture: <br> </h3>
 
 <form action="/lectures/new" method="post">
   <label for="title">Title:</label>

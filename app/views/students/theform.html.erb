@@ -8,7 +8,9 @@
 
   <input type="hidden" id="lecture_id" value="<%=lecid%>" name="idu[lecture_id]">
   <input type="hidden" id="student_id" value="<%=@studentid%>" name="idu[student_id]">
-  <input type="hidden" id="idu_type" value="<%=lecid%>" name="idu[idu_type]">
+<!--   <input type="hidden" id="idu_type" value="<%=lecid%>" name="idu[idu_type]"> -->
+
+    <input type="hidden" id="idu_type" value="<%=params[:type]%>" name="idu[idu_type]">
 
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 

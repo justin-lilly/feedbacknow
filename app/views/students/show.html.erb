@@ -1,6 +1,6 @@
 <a href="/home">Home </a>
 
-<p> Hi, <%= @student.username %>. These are your lectures: </p> <br>
+<h3> Hi, <%= @student.username %>. These are your lectures: </h3> <br>
 <% @lecturearray.each do |x| %>
 
 
@@ -8,7 +8,7 @@
 
 <% end %> <br>
 
-<p>  These are your Feedbacks: </p><br>
+<h3>  These are your Feedbacks: </h3><br>
 <% @idus.each do |idu| %>
 Lecture: <%= Lecture.find(idu.lecture_id).name %> <br>
 Keyword: <%= idu.keyword  %> <br>
