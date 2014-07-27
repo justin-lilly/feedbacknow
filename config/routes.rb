@@ -24,5 +24,7 @@ Rails.application.routes.draw do
   put "/teachers/:id" => "teachers#update"
 
   get '/students/:id/:lecture' => "students#something"
+  get '/students/:id/:lecture/:type' => "students#theform"
+
 
 end

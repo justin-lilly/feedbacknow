@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$("#understand").on('click', function(){
+	console.log("woohoo")
+});

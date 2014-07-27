@@ -33,6 +33,14 @@ class StudentsController < ApplicationController
     @lecturename = params[:lecture]
   end
 
+  def theform
+    @studentid = params[:id]
+    @lecturename = params[:lecture]
+    @idutype = params[:type]
+  end
+
+
+
 private
 
   def student_params

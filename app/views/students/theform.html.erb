@@ -1,0 +1,16 @@
+    <% lecid = Lecture.find_by_name(@lecturename).id  %>
+
+
+
+<form action="/idus" method="post">
+  <label for="keyword">Keyword:</label>
+  <input type="text" id="keyword" name="idu[keyword]">
+
+  <input type="hidden" id="lecture_id" value="<%=lecid%>" name="idu[lecture_id]">
+  <input type="hidden" id="student_id" value="<%=@studentid%>" name="idu[student_id]">
+  <input type="hidden" id="idu_type" value="<%=lecid%>" name="idu[idu_type]">
+
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <input type="submit" value="submit">
+</form>

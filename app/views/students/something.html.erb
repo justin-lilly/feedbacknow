@@ -2,7 +2,13 @@
     <% @studentid %>
     <h3> <%= @lecturename %> </h3> <br><br>
 
+    <% lecid = Lecture.find_by_name(@lecturename).id 
 
-<button>I have a question</button>
-<button>Not Yet</button>
-<button>I understand</button>
+    %>
+
+<a href="/students/<%= @studentid %>/<%= @lecturename %>/1" ><button id="question">I have a question</button></a> 
+<a href="/students/<%= @studentid %>/<%= @lecturename %>/2" ><button id="notyet">Not Yet</button></a> 
+<a href="/students/<%= @studentid %>/<%= @lecturename %>/3" ><button id="understand">I understand</button></a> 
+
+
+
