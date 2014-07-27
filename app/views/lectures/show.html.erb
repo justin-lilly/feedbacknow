@@ -1,8 +1,24 @@
 <div>
 
+
 	<h2> Lecture: <%= @lecture.name %> </h2> 
 
-	I don't understands from this lecture: <br><br>
+	 Add your student's IDs separated by commas:
+  <form action="/lecstu/new" method="post">
+  	<input type="text" id="student_id" name="lecstu[student_id]"> 
+  	<input type="hidden" id="lecture_id" value=<%=@lecture.id %> name="lecstu[lecture_id]">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"> 
+  	<input type="submit" value="submit">
+	</form>
+
+	Students: <% lecstus = Lecstu.where(:lecture_id => @lecture.id) %>
+	<% lecstus.each do |x| %>
+	<%= x.student_id%>
+	<% end %>
+
+<br>
+
+	<h3>Feedback from this lecture: </h3><br><br>
 
 	<% @idus.reverse.each do |idu| %>
 
@@ -22,7 +38,7 @@
 
 <script type="text/javascript"> 
 
-  setInterval("my_function();",1000); 
+  setInterval("my_function();",10000); 
   
     function my_function(){
         window.location = location.href;

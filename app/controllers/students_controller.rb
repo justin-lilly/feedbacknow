@@ -24,6 +24,18 @@ class StudentsController < ApplicationController
     redirect_to '/home'
   end
 
+  def error
+  end
+
+  def signin
+    student = Student.find_by_username(student_params[:username])
+    if student
+      redirect_to "/students/#{student.id}"
+    else
+      redirect_to "/students/error"
+    end
+  end
+
   def edit
   end
 

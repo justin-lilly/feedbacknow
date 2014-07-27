@@ -11,16 +11,20 @@ Rails.application.routes.draw do
 
   get "/teachers" => "teachers#index"
   get "/teachers/new" => "teachers#new"
-   get "/teachers/error" => "teachers#error"
+  get "/teachers/error" => "teachers#error"
   post "/teachers/signin" => "teachers#signin"
   get "/teachers/:id" => "teachers#show"
   post "/teachers" => 'teachers#create'
   get "/teachers/:id/edit" => "teachers#edit"
   put "/teachers/:id" => "teachers#update"
  
+  post '/lecstu/new' => 'lecstu#create'
+
 
   get "/students" => "students#index"
-  get "/students/new" => "students#new" 
+  get "/students/new" => "students#new"
+  get "/students/error" => "students#error"
+  post "/students/signin" => "students#signin" 
   get "/students/:id" => "students#show"
   post "/students" => 'students#create'
   get "/students/:id/edit" => "students#edit"
