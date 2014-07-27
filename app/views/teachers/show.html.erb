@@ -2,8 +2,31 @@ Hi <%= @teacher.username %>, your lectures are: <br><br>
 
 <% @lectures.each do |lecture| %>
 
-<a href="/lectures/<%=lecture.id%>" ><%= lecture.name %><br><br>
+<a href="/lectures/<%=lecture.id%>" ><%= lecture.name %> </a><br><br>
 
 
 <% end %>
 
+<br><br>
+Add a new lecture: <br><br>
+
+<form action="/lectures/new" method="post">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="lecture[name]"> <br><br>
+
+
+  <input type="hidden" id="teacher" value= <%=@teacher.id %> name="lecture[teacher_id]">
+
+
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"> 
+  <input type="submit" value="submit">
+</form>
+
+
+
+
+
+<!--  Add your student's IDs separated by commas <br>
+
+  <label for="students">Students:</label>
+  <input type="text" id="students" name="lecture[students]"> -->
