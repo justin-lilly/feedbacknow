@@ -30,12 +30,14 @@ ActiveRecord::Schema.define(version: 20140726185421) do
 
   create_table "students", force: true do |t|
     t.string   "username"
+    t.string   "session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "teachers", force: true do |t|
     t.string   "username"
+    t.string   "session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

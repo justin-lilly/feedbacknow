@@ -1,0 +1,6 @@
+Hi, <%= @student.username %>. These are your I don't understands: <br>
+<% @idus.each do |idu| %>
+Lecture ID: <%= idu.lecture_id  %> <br>
+Keyword: <%= idu.keyword  %> <br>
+Created at: <%= idu.created_at  %> <br>
+<% end %>

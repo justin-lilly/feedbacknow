@@ -3,9 +3,11 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
-  # def show
-  #   @student = Student.find(params[:id])
-  # end
+  def show
+    @student = Student.find(params[:id])
+    id = @student.id
+    @idus = Idu.where(:student_id => id)
+  end
 
   def new
     @student = Student.new

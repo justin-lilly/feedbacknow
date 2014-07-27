@@ -1,8 +1,8 @@
 Teacher Login<br>
-<form action=<%= "/teachers/#{params[:id]}" %> method="post">
+<form action=<%= "/teachers/#{params[:username]}" %> method="post">
 
   <label for="username">Username:</label>
-  <input type="text" id="username" name="video[title]">
+  <input type="text" id="username" name="teacher[username]">
 
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
@@ -14,10 +14,8 @@ Teacher Login<br>
 Student Login
 <form action=<%= "/students/#{params[:id]}" %> method="post">
 
-<input name="_method" type="hidden" value="put">
-
   <label for="username">Username:</label>
-  <input type="text" id="username" name="video[title]">
+  <input type="text" id="username" name="student[username]">
 
 
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">

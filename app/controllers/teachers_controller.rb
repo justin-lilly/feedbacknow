@@ -5,6 +5,9 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
+    id = @teacher.id
+    @lectures = Lecture.where(:teacher_id => id)
+    @idus = Idu.where(:student_id => id)
   end
 
   def new

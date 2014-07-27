@@ -1,0 +1,5 @@
+Hi <%= @teacher.username %>, your lectures are: <br><br>
+
+<% @lectures.each do |lecture| %>
+<%= lecture.name %><br><br>
+<% end %>
