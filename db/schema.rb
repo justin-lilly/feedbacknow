@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140726185421) do
     t.integer  "lecture_id"
     t.text     "keyword"
     t.integer  "student_id"
+    t.integer  "idu_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,5 +42,13 @@ ActiveRecord::Schema.define(version: 20140726185421) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+    create_table "lecstus", force: true do |t|
+    t.integer   "lecture_id"
+    t.integer   "student_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
 end

@@ -7,6 +7,11 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     id = @student.id
     @idus = Idu.where(:student_id => id)
+    lecstuarray = Lecstu.where(:student_id => @student.id)
+    @lecturearray = []
+    lecstuarray.each do |x|
+      @lecturearray << x.lecture_id
+    end
   end
 
   def new
@@ -19,6 +24,15 @@ class StudentsController < ApplicationController
     redirect_to '/home'
   end
 
+  def edit
+
+  end
+
+  def something
+    @studentid = params[:id]
+    @lecturename = params[:lecture]
+  end
+
 private
 
   def student_params
@@ -26,3 +40,5 @@ private
   end
 
 end
+
+'/students/:id/:lecture'

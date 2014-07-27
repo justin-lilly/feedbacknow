@@ -1,0 +1,12 @@
+
+<h2> Lecture: <%= @lecture.name %> </h2> 
+
+I don't understands from this lecture: <br><br>
+
+<% @idus.each do |idu| %>
+
+Keyword: <%= idu.keyword  %> <br>
+
+Created at: <%= idu.created_at  %> <br><br>
+
+<% end %>

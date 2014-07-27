@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get "/idus" => "idus#index"
   get "/lectures" => "lectures#index"
+  get "/lectures/:id" => "lectures#show"
 
   get "/home" => "idus#home"
   get "/login" => "idus#login"
@@ -21,5 +22,7 @@ Rails.application.routes.draw do
   post "/students" => 'students#create'
   get "/students/:id/edit" => "students#edit"
   put "/teachers/:id" => "teachers#update"
+
+  get '/students/:id/:lecture' => "students#something"
 
 end

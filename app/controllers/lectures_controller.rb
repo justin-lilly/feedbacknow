@@ -5,15 +5,9 @@ class LecturesController < ApplicationController
 
   def show
     @lecture = Lecture.find(params[:id])
+    @idus = Idu.where(:lecture_id => @lecture.id)
   end
 
-  def home
-  end
 
-  def login
-  end
-
-  def signup
-  end
 
 end

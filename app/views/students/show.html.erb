@@ -1,6 +1,19 @@
-Hi, <%= @student.username %>. These are your I don't understands: <br>
+
+
+<p> Hi, <%= @student.username %>. These are your lectures: </p> <br>
+<% @lecturearray.each do |x| %>
+
+
+<a href="/students/<%= @student.id %>/<%= Lecture.find(x).name %>"><%= Lecture.find(x).name %> </a><br>
+
+<% end %> <br>
+
+<p> Hi, <%= @student.username %>. These are your I don't understands: </p> <br><br>
 <% @idus.each do |idu| %>
-Lecture ID: <%= idu.lecture_id  %> <br>
+Lecture: <%= Lecture.find(idu.lecture_id).name %> <br>
 Keyword: <%= idu.keyword  %> <br>
-Created at: <%= idu.created_at  %> <br>
+Created at: <%= idu.created_at  %> <br><br>
 <% end %>
+
+<a href="/students/1/history">link</a>
+
