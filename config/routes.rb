@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   
+  root :to => "idus#home"
+
   get "/idus" => "idus#index"
   get "/lectures" => "lectures#index"
   post "/lectures/new" => "lectures#create"
   get "/lectures/:id" => "lectures#show"
 
   get "/home" => "idus#home"
+  get "/" => "idus#home"
   get "/login" => "idus#login"
   get "/signup" => "idus#signup"
+  get '/about' => "idus#about"
 
   get "/teachers" => "teachers#index"
   get "/teachers/new" => "teachers#new"
@@ -34,6 +38,8 @@ Rails.application.routes.draw do
   get '/students/:id/:lecture/:type' => "students#theform"
   post '/students/:id/:lecture' => "students#something"
   post '/students/:id/:lecture/:type' => "students#newidu"
+
+
 
 
 end
