@@ -2,21 +2,28 @@
 	<link rel="stylesheet" href="application.css">
 </head>
 
+<a href="/home">Home</a>
 
-<div class="containercenter">
-	   <% @studentid %>
-    <h3> <%= @lecturename %> </h3> <br><br>
+<body>
 
-    <% lecid = Lecture.find_by_name(@lecturename).id 
+	<div class="containercenter">
+		   <% @studentid %>
+	    <h3> <%= @lecturename %> </h3> <br><br>
 
-    %>
+	    <% lecid = Lecture.find_by_name(@lecturename).id 
 
-<a href="/students/<%= @studentid %>/<%= @lecturename %>/3" ><button id="yes">I understand</button></a> 
-<a href="/students/<%= @studentid %>/<%= @lecturename %>/1" ><button >I have a question</button></a> 
-<a href="/students/<%= @studentid %>/<%= @lecturename %>/2" ><button id="no">Not Yet</button></a> 
+	    %>
+
+	<a href="/students/<%= @studentid %>/<%= @lecturename %>/3" ><button id="yes">I understand</button></a> 
+	<a href="/students/<%= @studentid %>/<%= @lecturename %>/1" ><button >I have a question</button></a> 
+	<a href="/students/<%= @studentid %>/<%= @lecturename %>/2" ><button id="no">Not Yet</button></a> 
 
 
-</div>
+	</div>
+
+
+	
+</body>
 
 
 

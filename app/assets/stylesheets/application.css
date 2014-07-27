@@ -1,3 +1,15 @@
+
+
+#centersmall {
+  width: 60%;
+  margin-left: 20%;
+}
+
+a:hover {
+	background-color: black;
+	color: white;
+}
+
 .containercenter {
 	padding-top: 100px;
 	text-align: center;
@@ -5,7 +17,7 @@
 
 .container {
 padding-left: 100px;
-width: 60%;
+width: 70%;
 }
 
 #welcome {

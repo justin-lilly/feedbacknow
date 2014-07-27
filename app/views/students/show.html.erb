@@ -1,5 +1,10 @@
 <head>
 	<link rel="stylesheet" href="application.css">
+	<style>
+	.idu1 {background-color:#F5406A; border-radius: 20px; text-align: center}
+	.idu2 {background-color:#F7F79C; border-radius: 20px; text-align: center}
+	.idu3 {background-color:#79F782; border-radius: 20px; text-align: center}
+	</style>
 </head>
 
 <body>
@@ -17,11 +22,13 @@
 
 		<h3>  These are your Feedbacks: </h3><br>
 		<% @idus.reverse.each do |idu| %>
-		Lecture: <%= Lecture.find(idu.lecture_id).name %> <br>
-		Keyword: <%= idu.keyword  %> <br>
-		Created at: <%= idu.created_at.to_s[0..18]  %> <br><br>
-		<% end %>
-	</div>
+		<div class="idu<%=idu.idu_type %>" >
+			Lecture: <%= Lecture.find(idu.lecture_id).name %> <br>
+			Keyword: <%= idu.keyword  %> <br>
+			Created at: <%= idu.created_at.to_s[0..18]  %> <br><br>
+		</div><br>
+		<% end %><br>
+
 
 
 </body>
