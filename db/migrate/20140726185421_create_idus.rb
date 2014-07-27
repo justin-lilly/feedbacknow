@@ -4,6 +4,7 @@ class CreateIdus < ActiveRecord::Migration
       t.integer :lecture_id
       t.text :keyword
       t.integer :student_id
+      t.integer :idu_type
 
       t.timestamps
     end
